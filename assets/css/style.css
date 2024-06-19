@@ -1,0 +1,31 @@
+/* Basic Footer Styling */
+footer {
+    background-color: #343a40; /* Dark background from your code */
+    color: white;
+    padding: 20px 0; /* Adjust padding as needed */
+}
+
+/* Core Footer Positioning (Choose ONE) */
+
+/* Option 1: Flexbox (Best for most modern layouts) */
+body {
+    display: flex;
+    min-height: 100vh; /* Ensure body fills viewport height */
+    flex-direction: column; 
+}
+
+footer {
+    margin-top: auto; /* Push footer to bottom */
+}
+
+/* Option 2: Sticky Footer (Simpler, may need tweaking) */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%; 
+}
+
+/* Optional: Extra Space Above Footer */
+.content-wrapper { /* Add this class to your main content area */
+    padding-bottom: 60px; /* Adjust to match footer height */
+}
