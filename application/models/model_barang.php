@@ -77,12 +77,12 @@ class Model_barang extends CI_Model{
 
     // Fungsi untuk mencari barang (digunakan oleh admin)
     public function search_barang($keyword) {
-        // Mencari barang yang namanya, keterangannya, atau kategorinya mirip dengan kata kunci (LIKE)
         $this->db->like('nama_brg', $keyword);
-        $this->db->or_like('keterangan', $keyword);
+        $this->db->or_like('keterangan', $keyword); 
         $this->db->or_like('kategori', $keyword);
-        return $this->db->get('tb_barang')->result(); // Mengembalikan hasil pencarian sebagai array of object
+        return $this->db->get('tb_barang')->result();
     }
+    
 
     public function get_gambar_by_id($id) {
         $this->db->select('gambar');

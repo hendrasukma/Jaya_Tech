@@ -22,7 +22,7 @@
             </div>
         </form>
 
-        <form action="<?= base_url('admin/data_barang/search_barang') ?>" method="get" class="form-inline"> 
+        <form action="<?= base_url('admin/data_barang/search_barang') ?>" method="get" class="form-inline">
             <div class="input-group">
                 <input type="text" name="keyword" class="form-control" placeholder="Cari barang...">
                 <div class="input-group-append">

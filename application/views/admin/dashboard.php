@@ -1,36 +1,5 @@
 <div class="container-fluid ml-3 mr-3">
-  <div class="row">
-    <div class="col-xl-8 col-lg-12 mb-4">
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Total Penghasilan Bulanan</h6>
-        </div>
-        <div class="card-body">
-          <div class="chart-area">
-            <canvas id="myAreaChart"></canvas>
-          </div>
-          <hr>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Bulan</th>
-                <th>Penghasilan (Rp)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($monthly_income as $income): ?>
-                <tr>
-                  <td><?= date('F', mktime(0, 0, 0, $income->month, 1)) ?></td>
-                  <td><?= number_format($income->income, 0, ',', '.') ?></td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>          
-  </div>
-  <div class="row mr-3">
+<div class="row mr-3">
     <div class="col-xl-3 col-lg-6 mb-4">
       <div class="card border-left-success shadow h-100 py-2">
         <div class="card-body">
@@ -118,6 +87,39 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-xl-8 col-lg-12 mb-4">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Total Penghasilan Bulanan</h6>
+        </div>
+        <div class="card-body">
+          <div class="chart-area">
+            <canvas id="myAreaChart"></canvas>
+          </div>
+          <hr>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Bulan</th>
+                <th>Penghasilan (Rp)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($monthly_income as $income): ?>
+                <tr>
+                  <td><?= date('F', mktime(0, 0, 0, $income->month, 1)) ?></td>
+                  <td><?= number_format($income->income, 0, ',', '.') ?></td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>          
+  </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     // Ambil data dari PHP

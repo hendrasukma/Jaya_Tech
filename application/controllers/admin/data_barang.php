@@ -167,4 +167,15 @@ class Data_barang extends CI_Controller {
         $this->load->view('admin/data_barang', $data);
         $this->load->view('templates_admin/footer');
     }
+
+    public function search_barang() {
+        $keyword = $this->input->get('keyword');
+        $data['barang'] = $this->model_barang->search_barang($keyword); // Gunakan model untuk mencari
+    
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/data_barang', $data); // Tampilkan hasil di view yang sama
+        $this->load->view('templates_admin/footer');
+    }
+    
 }
